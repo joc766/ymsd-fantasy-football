@@ -11,3 +11,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.overall-display {
+  /* display: flex; */
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.matchup-display {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px;
+  flex:1;
+  margin: 20px;
+}
+
+.player-comparison-table {
+  justify-content: space-around;
+  position: relative;
+  padding: 20px;
+}
+
+.player-comparison-table:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 1px; /* Adjust the width of the vertical line */
+  background-color: #ccc; /* Adjust the color of the vertical line */
+}
+
+.player-table {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+}
+
+.player-table tbody {
+  flex-grow: 1;
+}
+
+.custom-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table-header {
+  border-bottom: 2px solid #ddd; /* Line under table heading rows */
+  padding: 10px;
+}
+
+.table-row {
+}
+
+.table-header,
+.table-row > td:not(.last-column) {
+  border-right: 1px solid #ddd; /* Line between table columns */
+}
+
+.last-column {
+  border-right: none; /* No border on the last column */
+}
+
+.data {
+  text-align: left;
+  padding-left: 10px;
+  padding-right: 30px;
+}
