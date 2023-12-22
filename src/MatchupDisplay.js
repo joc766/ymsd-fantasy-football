@@ -5,7 +5,7 @@ import  PlayerComparisonTable  from './PlayerTable.js';
 
 import { extractMatchupData } from './utils.mjs';
 
-const MatchupDisplay = () => {
+const MatchupDisplay = ({matchups}) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ const MatchupDisplay = () => {
       try {
         const response = await fetch('https://api.sleeper.app/v1/league/990267272524541952/matchups/16'); // Replace with your API endpoint
         const matchupData = await response.json();
-        const result = extractMatchupData(matchupData)
+        const result = extractMatchupData(matchups, matchupData)
         console.log(result)
         setData(result);
       } catch (error) {
@@ -29,6 +29,9 @@ const MatchupDisplay = () => {
     return () => clearInterval(intervalId);
 
   }, []); // The empty dependency array means this effect runs once when the component mounts
+
+
+
 
   if (data == null) {
     return <div>Loading...</div>;

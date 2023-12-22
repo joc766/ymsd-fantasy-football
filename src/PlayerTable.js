@@ -7,7 +7,10 @@ const PlayerComparisonTable = ({ playerData, playerName }) => {
     return (
       <div className="player-comparison-table">
         <div className="player-table">
-          <h2>{playerName}</h2>
+          <div className="team-header">
+            <h2>{playerName}</h2>
+            <Avatar alt={playerName} src={`https://sleepercdn.com/avatars/thumbs/${playerData.avatarID}`} /> 
+          </div>
           <table className="custom-table">
             <thead>
               <tr>
@@ -27,7 +30,7 @@ const PlayerComparisonTable = ({ playerData, playerName }) => {
             </tbody>
           </table>
         </div>
-        <h4> Total Points: {totalPoints}</h4>
+        <h4> Total Points: <p style={{backgroundColor: 'lightblue'}}>{totalPoints}</p></h4>
       </div>
     )
 
