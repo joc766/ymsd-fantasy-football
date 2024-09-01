@@ -1,1 +1,1 @@
-
+Webpage to view live fantasy football playoff matchup via Sleeper API. Allow league members to view this matchup since Sleeper settings did not permit the highest remaining seed to pick their opponent for semi-final.
